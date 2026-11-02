@@ -40,7 +40,7 @@ PRODUCTION = (env_value("NODE_ENV").lower() == "production" or env_value("RENDER
 PORT = int(env_value("PORT", "3000"))
 SESSION_SECRET = env_value("SESSION_SECRET")
 GOOGLE_CLIENT_ID = env_value("GOOGLE_CLIENT_ID")
-GROQ_API_KEY = env_value("GROQ_API_KEY")
+GROQ_API_KEY = env_value("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")
 # Personal CA's configured model. Render's GROQ_MODEL value overrides this default.
 GROQ_MODEL = env_value("GROQ_MODEL", "openai/gpt-oss-20b")
 FRONTEND_ORIGIN = env_value("FRONTEND_ORIGIN").rstrip("/")
