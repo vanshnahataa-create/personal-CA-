@@ -6,9 +6,9 @@
 <title>Personal CA — AI Tax Assistant</title>
 <meta content="yCHba6oHkhxCFwEzGIoMzEVPRokQsaWYdfjQKQLj6ss" name="google-site-verification">
 <meta content="Personal CA is an AI-powered personal tax advisor for India, founded by Vansh Rajesh Nahata. Get real tax computation, government scheme matching, and a live AI tax chatbot." name="description"/>
-<link rel="icon" type="image/png" href="/assets/personal-ca-icon.png"/>
+<link rel="icon" type="image/png" href="/assets/personal-ca-icon-512.png"/>
 <meta name="theme-color" content="#06142d"/>
-<link rel="apple-touch-icon" href="/assets/personal-ca-icon.png"/>
+<link rel="apple-touch-icon" href="/assets/personal-ca-icon-512.png"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -93,7 +93,7 @@ coverage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-t
 .market-card{margin-top:22px}.market-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.market-form{display:grid;gap:10px}.market-form label{font-weight:700;font-size:13px}.market-form input,.market-form select{padding:12px;border:1px solid var(--line);border-radius:9px;font:inherit}.market-result{background:#f7fbff;border:1px solid #dbeafe;border-radius:12px;padding:16px}.market-note{font-size:12px;color:var(--muted);line-height:1.5}.risk-pill{display:inline-block;padding:5px 9px;border-radius:999px;background:#eef2ff;font-size:12px;font-weight:700}@media(max-width:750px){.market-grid{grid-template-columns:1fr}}
 
 @media(max-width:750px){#mobileNavLinks{display:grid !important}.more-wrap{z-index:4000}.status-menu{max-height:80vh;overflow:auto}}
-</style><script>window.PERSONAL_CA_API=window.PERSONAL_CA_API||(location.hostname.endsWith("onrender.com")?location.origin:"https://personal-ca-1.onrender.com");const API_BASE=window.PERSONAL_CA_API.replace(/\/$/,"");</script>
+</style><script>window.PERSONAL_CA_API=window.PERSONAL_CA_API||location.origin;const API_BASE=window.PERSONAL_CA_API.replace(/\/$/,"");</script>
 <script>
 /* Personal CA client state: email sign-in is a lightweight project session; no OTP/email verification. */
 let currentUser = null;
@@ -106,13 +106,13 @@ const LOCAL_ACCOUNT_KEY = "personal_ca_local_account_v2";
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
-<header><div class="more-wrap"><button aria-label="Open status menu" class="more-btn" onclick="toggleStatusMenu()" type="button">⋮</button><div class="status-menu" id="statusMenu"><h3 style="margin:0 0 8px">Account &amp; system status</h3><div id="statusMenuContent"><div class="status-row"><b>Loading status…</b><span>Please wait.</span></div></div><div id="mobileNavLinks" style="display:grid;gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)"><button class="btn secondary" onclick="show('home')" style="width:100%" type="button">Home</button><button class="btn secondary" onclick="ensureTaxProfile()" style="width:100%" type="button">Tax Assistant</button><button class="btn secondary" onclick="show('pricing')" style="width:100%" type="button">Free</button><button class="btn secondary" onclick="show('rules')" style="width:100%" type="button">Rules &amp; Regulations</button><button class="btn secondary" onclick="show('updates')" style="width:100%" type="button">Updates</button><button class="btn secondary" onclick="openAIAccess('stocks')" style="width:100%" type="button">Stocks AI</button><button class="btn secondary" onclick="show('rdp')" style="width:100%" type="button">Remote Desktop (RDP)</button></div><button class="btn secondary" onclick="show('updates');toggleStatusMenu()" style="width:100%;margin-top:10px" type="button">Open Update Center</button><button class="btn" onclick="openAIAccess('stocks');toggleStatusMenu()" style="width:100%;margin-top:10px" type="button">📈 Open Stocks AI</button><button class="btn secondary" onclick="show('rdp');toggleStatusMenuClose()" style="width:100%;margin-top:10px" type="button">🖥️ Remote Desktop (RDP)</button></div></div><div class="logo"><img class="brand-icon" src="/assets/personal-ca-icon.png" alt="Personal CA logo" width="38" height="38"><span class="brand-name">Personal <strong>CA</strong><small>powered by Groq AI</small></span></div><nav>
+<header><div class="more-wrap"><button aria-label="Open status menu" class="more-btn" onclick="toggleStatusMenu()" type="button">⋮</button><div class="status-menu" id="statusMenu"><h3 style="margin:0 0 8px">Account &amp; system status</h3><div id="statusMenuContent"><div class="status-row"><b>Loading status…</b><span>Please wait.</span></div></div><div id="mobileNavLinks" style="display:grid;gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)"><button class="btn secondary" onclick="show('home')" style="width:100%" type="button">Home</button><button class="btn secondary" onclick="ensureTaxProfile()" style="width:100%" type="button">Tax Assistant</button><button class="btn secondary" onclick="show('pricing')" style="width:100%" type="button">Free</button><button class="btn secondary" onclick="show('rules')" style="width:100%" type="button">Rules &amp; Regulations</button><button class="btn secondary" onclick="show('updates')" style="width:100%" type="button">Updates</button><button class="btn secondary" onclick="openAIAccess('stocks')" style="width:100%" type="button">Stocks AI</button><button class="btn secondary" onclick="show('rdp')" style="width:100%" type="button">Remote Desktop (RDP)</button></div><button class="btn secondary" onclick="show('updates');toggleStatusMenu()" style="width:100%;margin-top:10px" type="button">Open Update Center</button><button class="btn" onclick="openAIAccess('stocks');toggleStatusMenu()" style="width:100%;margin-top:10px" type="button">📈 Open Stocks AI</button><button class="btn secondary" onclick="show('rdp');toggleStatusMenuClose()" style="width:100%;margin-top:10px" type="button">🖥️ Remote Desktop (RDP)</button></div></div><div class="logo"><img class="brand-icon" src="/assets/personal-ca-icon-512.png" alt="Personal CA logo" width="38" height="38"><span class="brand-name">Personal <strong>CA</strong><small>powered by Groq AI</small></span></div><nav>
 <button onclick="show('home')" type="button">Home</button>
 <button onclick="ensureTaxProfile()" type="button">Tax Assistant</button>
 <button onclick="show('pricing')" type="button">Free</button>
 <button onclick="show('rules')" type="button">Rules &amp; Regulations</button>
 <button onclick="show('updates')" type="button">Updates</button><button onclick="openAIAccess('stocks')" type="button">Stocks AI</button><button onclick="show('rdp')" type="button">RDP</button>
-</nav><div class="header-actions"><span class="pill" style="background:#eaf8f0;color:#157347">FREE</span></div></header>
+</nav><div class="header-actions"><button id="installAppBtn" class="btn secondary" type="button" aria-label="Install Personal CA app">⬇ Install App</button><span class="pill" style="background:#eaf8f0;color:#157347">FREE</span></div></header>
 <section id="home">
 <div class="hero"><h1>Your <span>AI Personal CA</span> for Indian tax planning.</h1>
 <p>Upload financial documents, get a real tax computation under both regimes, chat with an AI grounded in the current Income Tax Act rules, and see exactly which government schemes apply to you. Built to bring AI-assisted tax planning and personal finance guidance into one place.</p>
@@ -855,4 +855,47 @@ if ("serviceWorker" in navigator && location.protocol === "https:") {
   window.addEventListener("load", () => navigator.serviceWorker.register("/service-worker.js").catch(() => {}));
 }
 </script>
+
+<script>
+(() => {
+  let installPromptEvent = null;
+  const button = document.getElementById('installAppBtn');
+  if (!button) return;
+  const isStandalone = () =>
+    window.matchMedia('(display-mode: standalone)').matches ||
+    window.navigator.standalone === true;
+  const setInstalled = () => {
+    button.textContent = '✓ App Installed';
+    button.disabled = true;
+    button.setAttribute('aria-label', 'Personal CA is installed');
+  };
+  if (isStandalone()) setInstalled();
+  window.addEventListener('beforeinstallprompt', (event) => {
+    event.preventDefault();
+    installPromptEvent = event;
+    button.textContent = '⬇ Install App';
+    button.disabled = false;
+  });
+  window.addEventListener('appinstalled', () => {
+    installPromptEvent = null;
+    setInstalled();
+  });
+  button.addEventListener('click', async () => {
+    if (isStandalone()) return setInstalled();
+    if (installPromptEvent) {
+      installPromptEvent.prompt();
+      const choice = await installPromptEvent.userChoice;
+      installPromptEvent = null;
+      if (choice && choice.outcome === 'accepted') {
+        button.textContent = 'Installing…';
+      } else {
+        button.textContent = '⬇ Install App';
+      }
+      return;
+    }
+    alert('To install Personal CA on Android: open this website in Google Chrome, tap the ⋮ menu, then choose “Install app” or “Add to Home screen”. If that option is missing, first refresh the website and make sure the latest Render deployment is complete.');
+  });
+})();
+</script>
+
 </body></html>

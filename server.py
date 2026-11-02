@@ -3,6 +3,7 @@ import json
 import time
 import hashlib
 import secrets
+import re
 import sqlite3
 import threading
 import urllib.parse
@@ -27,8 +28,8 @@ PRODUCTION = (os.getenv("NODE_ENV", "").lower() == "production" or os.getenv("RE
 PORT = int(os.getenv("PORT", "3000"))
 SESSION_SECRET = os.getenv("SESSION_SECRET", "")
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID", "").strip()
-GROQ_API_KEY = os.getenv("GROQ_API_KEY", "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").strip()
-GROQ_MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b").strip()
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "").strip()
+GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile").strip()
 FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "").strip().rstrip("/")
 FRONTEND_ORIGINS = {x.strip().rstrip("/") for x in FRONTEND_ORIGIN.split(",") if x.strip()}
 DATA_ENCRYPTION_KEY = os.getenv("DATA_ENCRYPTION_KEY", "").strip()
@@ -259,7 +260,7 @@ async def security_headers(request: Request, call_next):
     response.headers["Permissions-Policy"] = "camera=(), microphone=(), geolocation=()"
     response.headers["Content-Security-Policy"] = (
         "default-src 'self'; "
-        "script-src 'self' https://accounts.google.com; "
+        "script-src 'self' 'unsafe-inline' https://accounts.google.com; "
         "style-src 'self' 'unsafe-inline'; "
         "img-src 'self' data: https:; "
         "connect-src 'self' https://accounts.google.com; "
@@ -797,7 +798,7 @@ def home():
     path = BASE / "index.html"
     if not path.exists():
         raise HTTPException(404, "Website file not found.")
-    return FileResponse(path)
+    return FileResponse(path, headers={"Cache-Control": "no-store"})
 
 
 @app.get("/{path:path}")
@@ -806,10 +807,11 @@ def static_files(path: str):
     if BASE not in target.parents and target != BASE:
         raise HTTPException(404)
     if target.is_file():
-        return FileResponse(target)
+        headers = {"Cache-Control": "no-store"} if target.name == "index.html" else None
+        return FileResponse(target, headers=headers)
     index = BASE / "index.html"
     if index.exists():
-        return FileResponse(index)
+        return FileResponse(index, headers={"Cache-Control": "no-store"})
     raise HTTPException(404)
 
 

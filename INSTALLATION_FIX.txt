@@ -1,0 +1,29 @@
+PERSONAL CA — INSTALLATION AND LOGO FIX
+
+1. Extract this ZIP.
+2. Replace these files in the root of the GitHub repository connected to Render:
+   - index.html
+   - manifest.webmanifest
+   - service-worker.js
+3. Upload/replace the assets folder contents, including:
+   - assets/personal-ca-icon-192.png
+   - assets/personal-ca-icon-512.png
+   - existing personal-ca-brand.png and other existing assets
+4. Keep server.py and all other backend files from the previous buttons-fix package unchanged.
+5. Commit the changes and wait for Render deployment to finish.
+
+CHECK THE DEPLOYMENT
+Open these URLs in Chrome (replace with your Render hostname):
+- https://personal-ca-ittw.onrender.com/manifest.webmanifest
+- https://personal-ca-ittw.onrender.com/assets/personal-ca-icon-192.png
+- https://personal-ca-ittw.onrender.com/assets/personal-ca-icon-512.png
+Each should load successfully.
+
+INSTALL ON ANDROID
+1. Open https://personal-ca-ittw.onrender.com in Google Chrome (not an in-app browser).
+2. Refresh the page after deployment.
+3. Tap the Install App button in the website header.
+4. If Chrome does not show its install prompt, open Chrome's ⋮ menu and select Install app or Add to Home screen.
+
+IMPORTANT
+A website cannot force Android/Chrome to install an app. Chrome decides when the native prompt is eligible. HTTPS, a valid manifest, working icon URLs, and a registered service worker are required. Do not replace SESSION_SECRET or DATA_ENCRYPTION_KEY in Render.
